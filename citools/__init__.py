@@ -1,3 +1,5 @@
+from githubtools import *
+
 name = "citools"
 
 VERSION = (0, 1, 0, 'final')
