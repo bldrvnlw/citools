@@ -2,10 +2,10 @@ from enum import Enum
 from github import Github
 
 class State(Enum):
-    error: 0
-    failure: 1
-    pending: 2
-    success: 3
+    error = 0
+    failure = 1
+    pending = 2
+    success = 3
  
 def set_github_commit_status(token: str, 
                              repo:str, 
