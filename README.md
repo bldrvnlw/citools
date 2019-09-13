@@ -10,7 +10,7 @@ pip install git+git://github.com/bldrvnlw/citools.git#egg=citools
 
 #### Available tools
 
-The tolls support a number of functions to support odd cases in CI/CD that have been encountered using Conan build tools to build a separate repo.
+The tools provides a number of functions to support odd cases in CI/CD that have been encountered using Conan build tools to build a separate repo.
 
 ##### functions
 
