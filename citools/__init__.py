@@ -1,4 +1,4 @@
-from githubtools import *
+from .githubtools import *
 
 name = "citools"
 
