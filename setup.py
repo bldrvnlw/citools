@@ -1,3 +1,5 @@
+import os
+import sys
 import setuptools
 
 PROJECT_DIR = os.path.dirname(__file__)
