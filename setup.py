@@ -8,7 +8,7 @@ sys.path.append(os.path.join(PROJECT_DIR, 'citools'))
 from citools import get_version
 
 install_requires=[
-   'PyGithub>1.43,<2'
+   'pygithub==1.43.8'
 ]
 
 with open("README.md", "r") as fh:

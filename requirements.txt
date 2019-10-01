@@ -1,1 +1,1 @@
-PyGithub==1.43.8
+pygithub==1.43.8
