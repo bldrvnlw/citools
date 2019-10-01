@@ -1,5 +1,7 @@
+import os
 from enum import Enum
 from github import Github
+from buildtriggertools import get_build_trigger_info
 
 class State(Enum):
     error = 0
@@ -15,6 +17,8 @@ def set_github_commit_status(token: str,
                              description: str, 
                              context: str) -> None:
     """
+    Set the server status for a git commit for a build system.
+    
     Parameters
     ----------
     token 
@@ -34,8 +38,7 @@ def set_github_commit_status(token: str,
         
     Returns
     -------
-        True if the status was changed
-        False if the change failed for any reason
+        None
     
     """
     
@@ -45,4 +48,47 @@ def set_github_commit_status(token: str,
     commit.create_status(state.name, target_url, description, context)
 
     
+def set_build_status(triggerfile: str, 
+                      token_var: str, 
+                      target_url: str,
+                      context: str,
+                      status: State) -> None:
+
+    """ Set the original commit status, as specified in the triggerfile
+        that contains the webhook data, to pending. Use the access_token_var
+        to retrieve the access token"
+        
+    Parameters
+    ----------
+    triggerfile 
+        path to the build trigger json
+    
+    token_var
+        name of the environment variable containing the git server
+        access token
+        
+    target_url
+        link to CI result
+        
+    context
+        context string groups the statuses
+        
+    Returns
+    -------
+    None
+    """
+        
+    commit_id, commit_author, commit_email, commit_url, commit_repo = get_build_trigger_info(triggerfile)
+    token = os.environ[token_var]
+    
+    set_github_commit_status(
+        token, 
+        commit_repo, 
+        commit_id, 
+        status,
+        target_url,
+        "Using separate build repo",
+        context)
+        
+        
     
