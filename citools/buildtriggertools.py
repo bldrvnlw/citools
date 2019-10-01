@@ -1,7 +1,7 @@
 import json
 from typing import Tuple
 
-from envtools import set_env_var
+from citools.envtools import set_env_var
 
 def get_build_trigger_info(triggerfile: str,
                             envfile: str = None) -> Tuple[str, str, str, str, str]:

@@ -1,7 +1,7 @@
 import os
 from enum import Enum
 from github import Github
-from buildtriggertools import get_build_trigger_info
+from citools.buildtriggertools import get_build_trigger_info
 
 class State(Enum):
     error = 0
