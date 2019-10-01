@@ -49,7 +49,7 @@ def set_github_commit_status(token: str,
 
     
 def set_build_status(triggerfile: str, 
-                      token_var: str, 
+                      token: str, 
                       target_url: str,
                       context: str,
                       status: State) -> None:
@@ -63,9 +63,8 @@ def set_build_status(triggerfile: str,
     triggerfile 
         path to the build trigger json
     
-    token_var
-        name of the environment variable containing the git server
-        access token
+    token
+        the access token value
         
     target_url
         link to CI result
@@ -79,7 +78,6 @@ def set_build_status(triggerfile: str,
     """
         
     commit_id, commit_author, commit_email, commit_url, commit_repo = get_build_trigger_info(triggerfile)
-    token = os.environ[token_var]
     
     set_github_commit_status(
         token, 
