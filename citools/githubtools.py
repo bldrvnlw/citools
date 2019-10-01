@@ -41,7 +41,7 @@ def set_github_commit_status(token: str,
         None
     
     """
-    
+    print(f"Setting status on repo: {repo} at SHA: {commit_id} with status: {state.name}") 
     g = Github(token)
     repo = g.get_repo(repo)
     commit = repo.get_commit(commit_id)
