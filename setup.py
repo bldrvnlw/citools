@@ -7,8 +7,6 @@ sys.path.append(os.path.join(PROJECT_DIR, 'citools'))
 
 from citools import get_version
 
-install_requires=
-
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
