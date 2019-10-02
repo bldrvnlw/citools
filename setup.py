@@ -12,7 +12,6 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='citools',
-    setup_requires=['pygithub==1.43.8'],
     version=get_version().replace(' ', '-'),
     author='Baldur van Lew',
     author_email='b.van_lew@lums.nl',
