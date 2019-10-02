@@ -7,27 +7,27 @@ sys.path.append(os.path.join(PROJECT_DIR, 'citools'))
 
 from citools import get_version
 
-install_requires=[
-   'pygithub==1.43.8'
-]
+install_requires=
 
-with open("README.md", "r") as fh:
+with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="citools",
+    name='citools',
     version=get_version().replace(' ', '-'),
-    author="Baldur van Lew",
-    author_email="b.van_lew@lums.nl",
-    description="Handy tools for ci/cd rangling",
+    author='Baldur van Lew',
+    author_email='b.van_lew@lums.nl',
+    description='Handy tools for ci/cd rangling',
     long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/bldrvnlw/citools",
-    install_requires=install_requires,
+    long_description_content_type='text/markdown',
+    url='https://github.com/bldrvnlw/citools',
+    install_requires=[
+        'pygithub==1.43.8',
+    ],
     packages=setuptools.find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
     ]
 )
