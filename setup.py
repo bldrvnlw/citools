@@ -5,7 +5,7 @@ import setuptools
 PROJECT_DIR = os.path.dirname(__file__)
 sys.path.append(os.path.join(PROJECT_DIR, 'citools'))
 
-from .citools.version import get_version
+from .version import get_version
 
 with open('README.md', 'r') as fh:
     long_description = fh.read()
